@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type = Service
+ServiceTypes = Krita/PythonPlugin
+X-KDE-Library = pix_fika
+X-Python-2-Compatible = false
+X-Krita-Manual = readme.md
+Name = Aki: PixFika
+Comment = Experimental plugin
