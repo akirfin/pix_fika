@@ -1,9 +1,10 @@
 import os
 
-from PyQt5.QtCore import Qt
-from PyQt5.QtCore import pyqtSlot as QSlot
-from PyQt5.QtCore import pyqtSignal as QSignal
-from PyQt5.QtCore import pyqtProperty as QProperty
+from PyQt5.QtCore import (
+        Qt,
+        pyqtSlot as QSlot,
+        pyqtSignal as QSignal,
+        pyqtProperty as QProperty)
 
 from PyQt5.QtWidgets import (
         QMainWindow,
@@ -15,6 +16,9 @@ from .gallery import (
 
 from .graph_view import (
         GraphView, )
+
+from .code_editor import (
+        CodeEditor, )
 
 
 class MainWindow(QMainWindow):
@@ -46,8 +50,8 @@ class MainWindow(QMainWindow):
         layout = QStackedLayout()
         central.setLayout(layout)
 
-        self._shader_editor = EditorWidget()
+        self._shader_editor = CodeEditor()
         layout.addWidget(self._shader_editor)
 
-        self._gallery = GalleryWidget()
+        self._gallery = Gallery()
         layout.addWidget(self._gallery)

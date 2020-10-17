@@ -1,10 +1,22 @@
-from PyQt5.QtCore import Qt
-from PyQt5.QtCore import pyqtSlot as QSlot
-from PyQt5.QtCore import pyqtSignal as QSignal
-from PyQt5.QtCore import pyqtProperty as QProperty
+from PyQt5.QtCore import (
+        Qt,
+        pyqtSlot as QSlot,
+        pyqtSignal as QSignal,
+        pyqtProperty as QProperty,
+        QSize)
 
-from pix_fika import NAME_PREFIX
+from PyQt5.QtGui import (
+        QPainter,
+        QPalette,
+        QTransform)
 
+from PyQt5.QtWidgets import (
+        QWidget,
+        QAbstractScrollArea)
+
+from pix_fika.common.utils_qt import (
+        create_painter,
+        keep_painter)
 
 
 class GraphViewport(QWidget):
@@ -45,25 +57,31 @@ class GraphViewport(QWidget):
         node = self._graph.get_node(node_id)
         self.update(node.rect())
 
+
     def on_node_edited(self, node_id):
         node = self._graph.get_node(node_id)
         self.update(node.rect())
 
+
     def on_node_removed(self, node_id, node):
         self.update(node.rect())
+
 
     def on_edge_added(self, edge_id):
         r.union(edge.from_plug.node().rect())
         r.union(edge.to_plug.node().rect())
         self.update(r)
 
+
     def on_edge_removed(self, edge_id, edge):
         r.union(edge.from_plug.node().rect())
         r.union(edge.to_plug.node().rect())
         self.update(r)
 
+
     def on_data_about_to_reset(self):
         pass
+
 
     def on_data_reseted(self):
         self.update()
@@ -149,8 +167,7 @@ class GraphView(QAbstractScrollArea):
         self.update_scroll_bars()
         return result
 
-
-	def fit_to_view(self, items=None, selected=None):
+    def fit_to_view(self, items=None, selected=None):
         if items is not None:
             pass  # fit to given
         elif selected is not None:
@@ -159,21 +176,21 @@ class GraphView(QAbstractScrollArea):
             pass  # fit all
 
 
-	def mouseMoveEvent(self, e):
+    def mouseMoveEvent(self, e):
         return super(GraphView, self).mouseMoveEvent(e)
 
 
-	def mousePressEvent(self, e):
+    def mousePressEvent(self, e):
         return super(GraphView, self).mousePressEvent(e)
 
 
-	def mouseReleaseEvent(self, e):
+    def mouseReleaseEvent(self, e):
         return super(GraphView, self).mouseReleaseEvent(e)
 
 
-	def wheelEvent(self, e):
+    def wheelEvent(self, e):
         return super(GraphView, self).wheelEvent(e)
 
 
-	def contextMenuEvent(self, e):
+    def contextMenuEvent(self, e):
         return super(GraphView, self).contextMenuEvent(e)

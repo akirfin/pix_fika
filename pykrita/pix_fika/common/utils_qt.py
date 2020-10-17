@@ -5,7 +5,8 @@ import re
 from urllib import request
 from contextlib import contextmanager
 
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import (
+        Qt, )
 
 from PyQt5.QtGui import (
         QPainter,

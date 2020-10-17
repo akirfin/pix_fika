@@ -4,12 +4,11 @@ from datetime import datetime
 import time
 from collections import OrderedDict as oDict
 
-from PyQt5.QtCore import Qt
-from PyQt5.QtCore import pyqtSlot as QSlot
-from PyQt5.QtCore import pyqtSignal as QSignal
-from PyQt5.QtCore import pyqtProperty as QProperty
-
 from PyQt5.QtCore import (
+        Qt,
+        pyqtSlot as QSlot,
+        pyqtSignal as QSignal,
+        pyqtProperty as QProperty
         QPointF,
         QDir,
         QFile,

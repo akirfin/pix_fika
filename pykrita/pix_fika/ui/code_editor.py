@@ -1,14 +1,12 @@
-from PyQt5.QtCore import Qt
-from PyQt5.QtCore import pyqtSlot as QSlot
-from PyQt5.QtCore import pyqtSignal as QSignal
-from PyQt5.QtCore import pyqtProperty as QProperty
+from PyQt5.QtCore import (
+        Qt,
+        pyqtSlot as QSlot,
+        pyqtSignal as QSignal,
+        pyqtProperty as QProperty)
 
 from PyQt5.QtWidgets import (
         QWidget,
         QVBoxLayout)
-
-from .viewport import (
-        Viewport, )
 
 
 class CodeEditor(QWidget):
@@ -21,6 +19,3 @@ class CodeEditor(QWidget):
     def create_ui(self):
         layout = QVBoxLayout()
         self.setLayout(layout)
-
-        self._viewport = Viewport()
-        layout.addWidget(self._viewport)

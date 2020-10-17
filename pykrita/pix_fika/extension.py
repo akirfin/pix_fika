@@ -28,8 +28,8 @@ from .common.utils_kis import (
         read_setting,
         write_setting)
 
-from .ui.pix_fika_window import (
-        PixFikaWindow, )
+from .ui.main_window import (
+        MainWindow, )
 
 
 class PixFikaExtension(Extension):
@@ -49,10 +49,10 @@ class PixFikaExtension(Extension):
         notifier = app.notifier()
         notifier.applicationClosing.connect(self.shuttingDown)
         # read defaults from settings
-        self._shader_toy_user = read_setting(
-                extension_name,
-                self.shader_toy_user_attr,
-                default="https://krita-artists.org/tag/featured")
+        #self._shader_toy_user = read_setting(
+        #        extension_name,
+        #        self.shader_toy_user_attr,
+        #        default="https://krita-artists.org/tag/featured")
         # create actions here and share "instance" to other places.
         self._show_window_action = create_action(
                 name="pix_fika_show_window",
@@ -68,10 +68,10 @@ class PixFikaExtension(Extension):
         Called once in Krita shutting down.
         """
         extension_name = self.objectName()
-        write_setting(
-                extension_name,
-                self.shader_toy_user_attr,
-                self._shader_toy_user)
+        #write_setting(
+        #        extension_name,
+        #        self.shader_toy_user_attr,
+        #        self._shader_toy_user)
 
 
     def createActions(self, window):
@@ -84,5 +84,5 @@ class PixFikaExtension(Extension):
 
     def show_window(self, cheched=None):
         if self._window is None:
-            self._window = PixFikaWindow()
+            self._window = MainWindow()
         self._window.show()

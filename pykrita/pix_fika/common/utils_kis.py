@@ -25,6 +25,10 @@ from .utils_py import (
         last,
         Undefined)
 
+from .utils_qt import (
+        find_menu,
+        create_menu)
+
 
 def find_create_experimental_menu(window):
     menu_bar = window.qwindow().menuBar()
