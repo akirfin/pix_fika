@@ -1,15 +1,27 @@
 import os
 
-from PyQt5.QtCore import (
-        Qt,
-        pyqtSlot as QSlot,
-        pyqtSignal as QSignal,
-        pyqtProperty as QProperty)
+try:
+    from PyQt5.QtCore import (
+            Qt,
+            pyqtSlot as QSlot,
+            pyqtSignal as QSignal,
+            pyqtProperty as QProperty)
 
-from PyQt5.QtWidgets import (
-        QMainWindow,
-        QWidget,
-        QStackedLayout)
+    from PyQt5.QtWidgets import (
+            QMainWindow,
+            QWidget,
+            QStackedLayout)
+except:
+    from PySide2.QtCore import (
+            Qt,
+            Slot as QSlot,
+            Signal as QSignal,
+            Property as QProperty)
+
+    from PySide2.QtWidgets import (
+            QMainWindow,
+            QWidget,
+            QStackedLayout)
 
 from .gallery import (
         Gallery, )
@@ -40,10 +52,12 @@ class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         super(MainWindow, self).__init__(parent=parent)
         self.setObjectName("pix_fika_main_window")
+        self.setWindowTitle("𝓟𝓲𝔁𝓕𝓲𝓴𝓪 0.0.1")
         self.create_ui()
 
 
     def create_ui(self):
+        self.resize(960, 600)
         central = GraphView()
         self.setCentralWidget(central)
 
