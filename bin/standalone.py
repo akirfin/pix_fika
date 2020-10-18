@@ -12,17 +12,9 @@ import os
 here_dir = os.path.dirname(__file__)
 pykrita_dir = os.path.abspath(os.path.join(here_dir, "..", "pykrita"))
 sys.path.append(pykrita_dir)
+from pix_fika.common import Qt5
 
-try:
-    from PyQt5.QtCore import (
-            Qt)
-    from PyQt5.QtWidgets import (
-            QApplication, )
-except:
-    from PySide2.QtCore import (
-            Qt)
-    from PySide2.QtWidgets import (
-            QApplication, )
+from Qt5.QtWidgets import QApplication
 
 from pix_fika.common.utils_qt import (
         dark_palette, )

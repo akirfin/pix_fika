@@ -1,36 +1,18 @@
-try:
-    from PyQt5.QtCore import (
-            Qt,
-            pyqtSlot as QSlot,
-            pyqtSignal as QSignal,
-            pyqtProperty as QProperty,
-            QSize)
+from Qt5.QtCore import (
+        Qt,
+        QSlot,
+        QSignal,
+        QProperty,
+        QSize)
 
-    from PyQt5.QtGui import (
-            QPainter,
-            QPalette,
-            QTransform)
+from Qt5.QtGui import (
+        QPainter,
+        QPalette,
+        QTransform)
 
-    from PyQt5.QtWidgets import (
-            QWidget,
-            QAbstractScrollArea)
-except:
-    from PySide2.QtCore import (
-            Qt,
-            Slot as QSlot,
-            Signal as QSignal,
-            Property as QProperty,
-            QSize)
-
-    from PySide2.QtGui import (
-            QPainter,
-            QPalette,
-            QTransform)
-
-    from PySide2.QtWidgets import (
-            QWidget,
-            QAbstractScrollArea)
-
+from Qt5.QtWidgets import (
+        QWidget,
+        QAbstractScrollArea)
 
 from pix_fika.common.utils_qt import (
         create_painter,

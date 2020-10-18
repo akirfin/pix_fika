@@ -48,15 +48,16 @@ def run_krita():
     Pipe left for future redirecting...
     """
     krita_start_cmd = solve_krita_start_cmd()
-    process = Popen(krita_start_cmd, stdout=PIPE)
-    while process.poll() is None:
-        data = process.stdout.readline()
+    if krita_start_cmd:
+        process = Popen(krita_start_cmd, stdout=PIPE)
+        while process.poll() is None:
+            data = process.stdout.readline()
+            sys.stdout.write(data.decode("utf-8"))
+            sys.stdout.flush()
+        # read lingering data
+        data = process.stdout.read()
         sys.stdout.write(data.decode("utf-8"))
         sys.stdout.flush()
-    # read lingering data
-    data = process.stdout.read()
-    sys.stdout.write(data.decode("utf-8"))
-    sys.stdout.flush()
 
 
 if __name__ == "__main__":

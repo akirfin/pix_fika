@@ -1,23 +1,12 @@
-try:
-    from PyQt5.QtCore import (
-            Qt,
-            pyqtSlot as QSlot,
-            pyqtSignal as QSignal,
-            pyqtProperty as QProperty)
+from Qt5.QtCore import (
+        Qt,
+        QSlot,
+        QSignal,
+        QProperty)
 
-    from PyQt5.QtWidgets import (
-            QWidget,
-            QVBoxLayout)
-except:
-    from PySide2.QtCore import (
-            Qt,
-            Slot as QSlot,
-            Signal as QSignal,
-            Property as QProperty)
-
-    from PySide2.QtWidgets import (
-            QWidget,
-            QVBoxLayout)
+from Qt5.QtWidgets import (
+        QWidget,
+        QVBoxLayout)
 
 
 class Gallery(QWidget):

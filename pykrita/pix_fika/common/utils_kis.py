@@ -11,13 +11,13 @@ from krita import (
         Krita,
         View)
 
-from PyQt5.QtCore import (
+from Qt5.QtCore import (
         QStandardPaths, )
 
-from PyQt5.QtGui import (
+from Qt5.QtGui import (
         QImage, )
 
-from PyQt5.QtWidgets import (
+from Qt5.QtWidgets import (
         QMdiArea, )
 
 from .utils_py import (

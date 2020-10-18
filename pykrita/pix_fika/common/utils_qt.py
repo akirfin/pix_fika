@@ -5,33 +5,18 @@ import re
 from urllib import request
 from contextlib import contextmanager
 
-try:
-    from PyQt5.QtCore import (
-            Qt, )
+from Qt5.QtCore import (
+        Qt, )
 
-    from PyQt5.QtGui import (
-            QPainter,
-            QPalette,
-            QColor,
-            QImage)
+from Qt5.QtGui import (
+        QPainter,
+        QPalette,
+        QColor,
+        QImage)
 
-    from PyQt5.QtWidgets import (
-            QAction,
-            QMenu)
-except:
-    from PySide2.QtCore import (
-            Qt, )
-
-    from PySide2.QtGui import (
-            QPainter,
-            QPalette,
-            QColor,
-            QImage)
-
-    from PySide2.QtWidgets import (
-            QAction,
-            QMenu)
-
+from Qt5.QtWidgets import (
+        QAction,
+        QMenu)
 
 from .utils_py import (
         print_console,

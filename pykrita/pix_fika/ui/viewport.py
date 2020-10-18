@@ -4,48 +4,26 @@ from datetime import datetime
 import time
 from collections import OrderedDict as oDict
 
-try:
-    from PyQt5.QtCore import (
-            Qt,
-            pyqtSlot as QSlot,
-            pyqtSignal as QSignal,
-            pyqtProperty as QProperty
-            QPointF,
-            QDir,
-            QFile,
-            QIODevice)
+from Qt5.QtCore import (
+        Qt,
+        QSlot,
+        QSignal,
+        QProperty
+        QPointF,
+        QDir,
+        QFile,
+        QIODevice)
 
-    from PyQt5.QtGui import (
-            QOpenGLShader,
-            QOpenGLShaderProgram,
-            QOpenGLVersionProfile,
-            QSurfaceFormat)
+from Qt5.QtGui import (
+        QOpenGLShader,
+        QOpenGLShaderProgram,
+        QOpenGLVersionProfile,
+        QSurfaceFormat)
 
-    from PyQt5.QtWidgets import (
-            QWidget,
-            QVBoxLayout,
-            QOpenGLWidget)
-except:
-    from PySide2.QtCore import (
-            Qt,
-            Slot as QSlot,
-            Signal as QSignal,
-            Property as QProperty
-            QPointF,
-            QDir,
-            QFile,
-            QIODevice)
-
-    from PySide2.QtGui import (
-            QOpenGLShader,
-            QOpenGLShaderProgram,
-            QOpenGLVersionProfile,
-            QSurfaceFormat)
-
-    from PySide2.QtWidgets import (
-            QWidget,
-            QVBoxLayout,
-            QOpenGLWidget)
+from Qt5.QtWidgets import (
+        QWidget,
+        QVBoxLayout,
+        QOpenGLWidget)
 
 
 _vertex_code = """\
