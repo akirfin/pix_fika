@@ -12,7 +12,8 @@ import os
 here_dir = os.path.dirname(__file__)
 pykrita_dir = os.path.abspath(os.path.join(here_dir, "..", "pykrita"))
 sys.path.append(pykrita_dir)
-from pix_fika.common import Qt5
+
+import pix_fika.common.Qt5
 
 from Qt5.QtWidgets import QApplication
 

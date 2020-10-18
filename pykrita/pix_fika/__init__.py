@@ -11,7 +11,8 @@ __version__ = "0.0.1"
 
 import sys
 import os
-from pix_fika.common import Qt5
+
+import pix_fika.common.Qt5
 
 try:
     from krita import (
