@@ -14,11 +14,6 @@ from subprocess import (
 
 
 def solve_krita_start_cmd():
-    krita_start_cmd = None  # Change this to something that starts up Krita
-
-    if krita_start_cmd is not None:
-        return krita_start_cmd
-
     try:
         # try to find krita start command from Windows registry
         import winreg
@@ -29,7 +24,9 @@ def solve_krita_start_cmd():
         krita_start_cmd = shlex.split(cli_cmd)[0]
         return krita_start_cmd
     except:
-        pass  # not a Windows os, or no missing registry key?
+        # not a windows platform, maybe krita is defined in enviroment?
+        # Change this to something that starts up Krita
+        return "krita"
 
 
 def get_krita_resource_dir():
@@ -61,11 +58,11 @@ def run_krita():
 
 
 if __name__ == "__main__":
-    this_dir = os.path.dirname(sys.argv[0])
+    here_dir = os.path.dirname(__file__)
     krita_resource_dir = get_krita_resource_dir()
 
-    pykrita_src_dir = lambda entry: os.path.abspath(os.path.join(this_dir, "..", "pykrita", entry))
-    pykrita_trg_dir = lambda entry: os.path.abspath(os.path.join(krita_resource_dir, entry))
+    pykrita_src_dir = lambda p: os.path.abspath(os.path.join(here_dir, "..", "pykrita", p))
+    pykrita_trg_dir = lambda p: os.path.abspath(os.path.join(krita_resource_dir, p))
 
     check_src_dir = pykrita_src_dir(".")
     check_trg_dir = pykrita_trg_dir(".")

@@ -9,11 +9,12 @@ Run Standalone Pix Fika
 import sys
 import os
 
+# add pix_fika package path to python enviroment.
 here_dir = os.path.dirname(__file__)
-pykrita_dir = os.path.abspath(os.path.join(here_dir, "..", "pykrita"))
+pykrita_dir = os.path.abspath(os.path.join(here_dir, ".."))
 sys.path.append(pykrita_dir)
 
-import pix_fika.common.Qt5
+import pix_fika
 
 from Qt5.QtWidgets import QApplication
 

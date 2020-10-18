@@ -12,6 +12,7 @@ __version__ = "0.0.1"
 import sys
 import os
 
+# alias PyQt5 | PySide2 -> Qt5
 import pix_fika.common.Qt5
 
 try:
@@ -56,5 +57,5 @@ try:
 
 
     register()
-except:
+except ImportError:
     pass
